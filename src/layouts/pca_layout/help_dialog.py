@@ -1,6 +1,6 @@
-import dash_table as dt
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash_table as dt
+from dash import dcc, html
+
 import dash_bootstrap_components as dbc
 from app import app
 

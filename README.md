@@ -52,8 +52,8 @@ This folder holds all of the layouts. There is a high-level file for each layout
 
 
 ```python
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+
 import dash_bootstrap_components as dbc
 
 from layouts.global_layout import data_table

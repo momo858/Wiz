@@ -1,5 +1,5 @@
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+
 import dash_bootstrap_components as dbc
 
 ##==================================
@@ -15,7 +15,7 @@ navbar = dbc.NavbarSimple(
                     dbc.NavItem(dbc.NavLink('PCA/LDA', href='/pca')),
                  ],
                  align="center",
-                 no_gutters=True,
+                 className="g-0",
             ),
         fill = True
         ),
@@ -24,7 +24,7 @@ navbar = dbc.NavbarSimple(
     brand_href="#",
     color="primary",
     id='navBar',
-    light = False,
+    
     dark = True,
 )
 

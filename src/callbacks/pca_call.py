@@ -5,11 +5,11 @@ import datetime
 import pandas as pd
 import numpy as np
 import dash
-import dash_table as dt
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash_table as dt
+from dash import dcc, html
+
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
+from dash import Input, Output, State
 from dash.exceptions import PreventUpdate
 
 ##==================================
@@ -74,9 +74,7 @@ def process_data_upload(file_contents, file_name, session_id):
             backgroundColor = '#eee',
         ),
         multiple      = True,
-        loading_state = dict(
-            is_loading = False,
-        ),
+
         id            = 'pca-file-upload',
         className     = 'upload',
         disabled      = True,

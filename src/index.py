@@ -5,10 +5,9 @@ import os
 import io
 import flask
 import urllib
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
+from dash import Input, Output, State
 from dash.exceptions import PreventUpdate
 
 ##==================================
@@ -104,13 +103,13 @@ def download_csv():
     str_io.close()
 
     return flask.send_file(mem,
-                           mimetype = 'text/csv',
-                           attachment_filename = 'data.csv',
-                           as_attachment = True)
+                        mimetype = 'text/csv',
+                        download_name = 'data.csv',  # ← NEW
+                        as_attachment = True)    
 
 ##==========================================
 ## Calling index.py
 ##===========================================
 if __name__ == '__main__':
     # Serve app from specified port
-    app.run_server(host='0.0.0.0', port = 5115, debug = False)
+    app.run(host='0.0.0.0', port = 5115, debug = False)

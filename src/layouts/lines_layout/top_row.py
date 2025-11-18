@@ -1,5 +1,5 @@
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+
 import dash_bootstrap_components as dbc
 
 ##==================================
@@ -18,9 +18,7 @@ upload = dbc.Col([
                 backgroundColor = '#eee',
                 ),
             multiple = True,
-            loading_state = dict(
-                is_loading = False,
-            ),
+
             id = 'lines-file-upload',
             className = 'upload',
         ),
@@ -41,7 +39,7 @@ upload = dbc.Col([
 radio_label = html.H6('Input Data Type:', style = dict(marginRight = 7))
 
 # Radio buttons
-radios = dbc.FormGroup(
+radios = html.Div(
     [
         dbc.RadioItems(
             id = 'lines-data-type',
